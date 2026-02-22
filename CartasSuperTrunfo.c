@@ -11,7 +11,6 @@ int main() {
 
   float pib1, pib2, area1, area2;
   float densidadepopulacional1, densidadepopulacional2;
-  float pib1, pib2;
   float superpoder1, superpoder2;
 
   char pais[50] = "Brasil";
@@ -33,7 +32,7 @@ int main() {
   scanf("%s", &estado1);
 
   printf("Cidade: \n");
-  scanf("%s", &ciadade1);
+  scanf("%s", &cidade1);
 
   printf("Populacao: \n");
   scanf("%f", &populacao1);
@@ -59,7 +58,7 @@ int main() {
   scanf("%s", &estado2);
 
   printf("Cidade: \n");
-  scanf("%s", &ciadade2);
+  scanf("%s", &cidade2);
 
   printf("Populacao: \n");
   scanf("%f", &populacao2);
@@ -76,8 +75,9 @@ int main() {
   
   // Carta1
   printf("\nCarta1: %d\nCodigo: %s\nEstado: %s\nCidade1: %sPopulação: %f\nArea: %f\nPontosTuristicos: %d\n",
-  Carta1, codigo1, estado1, ciadade1, populacao1, area1, pontosturisticos1);
+  carta1, codigo1, estado1, cidade1, populacao1, area1, pontosturisticos1);
 
   
 return 0;
-} 
+
+}
