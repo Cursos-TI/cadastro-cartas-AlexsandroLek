@@ -104,5 +104,22 @@
     printf("PIB per Capita: Carta 1 venceu (%d)\n", pibPerCapita1 > pibPerCapita2);
     printf("Super Poder: Carta 1 venceu (%d)\n", superpoder1 > superpoder2);
 
+    // Tema 3 Logica
+
+    printf("\nComparação de cartas (Atributo: PIB per Capita)\n\n");
+
+    printf("Carta 1 - %.2f\n", pibPerCapita1);
+    printf("Carta 2 - %.2f\n", pibPerCapita2);
+
+    if (pibPerCapita1 > pibPerCapita2) {
+        printf("\nResultado: Carta 1 (%s) venceu!\n", cidade1);
+    }
+    else if (pibPerCapita2 > pibPerCapita1) {
+        printf("\nResultado: Carta 2 (%s) venceu!\n", cidade2);
+    }
+    else {
+        printf("\nResultado: Empate!\n");
+    }
+  
     return 0;
 }
