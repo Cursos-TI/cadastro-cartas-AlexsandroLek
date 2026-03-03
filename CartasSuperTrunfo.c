@@ -4,7 +4,7 @@
   // Área para definição das variáveis para armazenar as propriedades das cidades
     
     unsigned long int populacao1, populacao2;
-    int pontosturisticos1, pontosturisticos2;
+    int pontosturisticos1, pontosturisticos2, PODER;
 
     float area1, pib1, densidade1, pibPerCapita1, superpoder1;
     float area2, pib2, densidade2, pibPerCapita2, superpoder2;
@@ -13,7 +13,7 @@
     char cidade1[20], cidade2[20];
     char carta1[20], carta2[20];
     char codigo1[20], codigo2[20];
-    
+
     // ENTRADA CARTA 1
     
     printf("Escolha sua 1 carta: ");
@@ -118,7 +118,21 @@
         printf("\nResultado: Carta 2 (%s) venceu!\n", cidade2);
     }
     else {
-        printf("\nResultado: Empate!\n");
+        printf("\nResultado: Empate!\n\n");
+    }
+
+    printf("ESCOLHA O SUPER PODER 1 ou 2\n");
+    scanf("%d", &PODER);
+    switch (PODER)
+    {
+    case 1:
+        printf("SUPER PODER 1");
+        break;
+    case 2:
+        printf("SUPER PODER 2");
+        break;
+    default:
+        break;
     }
   
     return 0;
