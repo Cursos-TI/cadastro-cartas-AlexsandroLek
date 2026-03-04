@@ -104,7 +104,7 @@
     printf("PIB per Capita: Carta 1 venceu (%d)\n", pibPerCapita1 > pibPerCapita2);
     printf("Super Poder: Carta 1 venceu (%d)\n", superpoder1 > superpoder2);
 
-    // Tema 3 Logica
+    // TEMA 3 LOGICA
 
     printf("\nComparação de cartas (Atributo: PIB per Capita)\n\n");
 
@@ -135,5 +135,91 @@
         break;
     }
   
+     // ESCOLHA DOS ATRIBUTOS
+
+    int op1, op2;
+
+    printf("\n=== ESCOLHA O PRIMEIRO ATRIBUTO ===\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Demográfica\n");
+    printf("Opção: ");
+    scanf("%d", &op1);
+
+    printf("\n=== ESCOLHA O SEGUNDO ATRIBUTO ===\n");
+
+    for(int i = 1; i <= 5; i++) {
+        if(i != op1) {
+            switch(i) {
+                case 1: printf("1 - População\n"); break;
+                case 2: printf("2 - Área\n"); break;
+                case 3: printf("3 - PIB\n"); break;
+                case 4: printf("4 - Pontos Turísticos\n"); break;
+                case 5: printf("5 - Densidade Demográfica\n"); break;
+            }
+        }
+    }
+
+    printf("Opção: ");
+    scanf("%d", &op2);
+
+    if(op2 == op1) {
+        printf("Erro: Você escolheu o mesmo atributo duas vezes!\n");
+        return 0;
+    }
+
+    // CAPTURA DOS VALORES
+
+    float valor1_c1 = 0, valor1_c2 = 0;
+    float valor2_c1 = 0, valor2_c2 = 0;
+
+    // Primeiro atributo
+    switch(op1) {
+        case 1: valor1_c1 = populacao1; valor1_c2 = populacao2; break;
+        case 2: valor1_c1 = area1; valor1_c2 = area2; break;
+        case 3: valor1_c1 = pib1; valor1_c2 = pib2; break;
+        case 4: valor1_c1 = pontosturisticos1; valor1_c2 = pontosturisticos2; break;
+        case 5: 
+            valor1_c1 = 1 / densidade1; 
+            valor1_c2 = 1 / densidade2; 
+            break;
+        default:
+            printf("Opção inválida!\n");
+            return 0;
+    }
+
+    // Segundo atributo
+    switch(op2) {
+        case 1: valor2_c1 = populacao1; valor2_c2 = populacao2; break;
+        case 2: valor2_c1 = area1; valor2_c2 = area2; break;
+        case 3: valor2_c1 = pib1; valor2_c2 = pib2; break;
+        case 4: valor2_c1 = pontosturisticos1; valor2_c2 = pontosturisticos2; break;
+        case 5: 
+            valor2_c1 = 1 / densidade1; 
+            valor2_c2 = 1 / densidade2; 
+            break;
+        default:
+            printf("Opção inválida!\n");
+            return 0;
+    }
+
+    // SOMA DOS ATRIBUTOS
+
+    float soma1 = valor1_c1 + valor2_c1;
+    float soma2 = valor1_c2 + valor2_c2;
+
+    // RESULTADO
+
+    printf("\n=== RESULTADO FINAL ===\n");
+    printf("%s - Soma: %.2f\n", cidade1, soma1);
+    printf("%s - Soma: %.2f\n", cidade2, soma2);
+
+    (soma1 > soma2) ? 
+        printf("Vencedor: %s\n", cidade1) :
+        (soma2 > soma1) ?
+            printf("Vencedor: %s\n", cidade2) :
+            printf("Empate!\n");
     return 0;
 }
